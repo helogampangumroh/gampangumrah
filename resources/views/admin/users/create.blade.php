@@ -72,30 +72,16 @@
                                         <h2 class="hidden">&nbsp;</h2>
                                         <div class="form-group mb-3 {{ $errors->first('first_name', 'has-error') }}">
                                             <div class="row">
-                                                <label for="first_name" class="col-sm-2 form-label">First Name *</label>
+                                                <label for="first_name" class="col-sm-2 form-label">Nama Lengkap *</label>
                                                 <div class="col-sm-10">
                                                     <input id="first_name" name="first_name" type="text"
-                                                        placeholder="First Name" class="form-control required"
+                                                        placeholder="Nama Lengkap" class="form-control required"
                                                         value="{!! old('first_name') !!}" />
 
                                                     {!! $errors->first('first_name', '<span class="help-block">:message</span>') !!}
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="form-group mb-3 {{ $errors->first('last_name', 'has-error') }}">
-                                            <div class="row"> <label for="last_name" class="col-sm-2 form-label">Last
-                                                    Name *</label>
-                                                <div class="col-sm-10">
-                                                    <input id="last_name" name="last_name" type="text"
-                                                        placeholder="Last Name" class="form-control required"
-                                                        value="{!! old('last_name') !!}" />
-
-                                                    {!! $errors->first('last_name', '<span class="help-block">:message</span>') !!}
-                                                </div>
-                                            </div>
-                                        </div>
-
 
                                         <div class="form-group mb-3 {{ $errors->first('email', 'has-error') }}">
                                             <div class="row">

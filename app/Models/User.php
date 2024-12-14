@@ -48,7 +48,7 @@ class User extends EloquentUser
     protected $appends = ['full_name'];
     public function getFullNameAttribute()
     {
-        return Str::limit($this->first_name . ' ' . $this->last_name, 30);
+        return Str::limit($this->first_name, 30);
     }
     public function country()
     {

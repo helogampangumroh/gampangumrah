@@ -46,8 +46,7 @@
                                 <thead>
                                     <tr class="filters">
                                         <th>ID</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
+                                        <th>Nama Lengkap</th>
                                         <th>User E-mail</th>
                                         <th>Status</th>
                                         <th>Created At</th>
@@ -85,10 +84,6 @@
                     {
                         data: 'first_name',
                         name: 'first_name'
-                    },
-                    {
-                        data: 'last_name',
-                        name: 'last_name'
                     },
                     {
                         data: 'email',

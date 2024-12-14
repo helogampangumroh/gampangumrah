@@ -49,7 +49,7 @@ class UsersController extends JoshController
      */
     public function data()
     {
-        $users = User::get(['id', 'first_name', 'last_name', 'email','created_at']);
+        $users = User::get(['id', 'first_name', 'email','created_at']);
         return DataTables::of($users)
             ->editColumn(
         'created_at',
@@ -127,7 +127,7 @@ class UsersController extends JoshController
             if (! $request->get('activate')) {
                 // Data to be used on the email view
                 $data = [
-                    'user_name' => $user->first_name .' '. $user->last_name,
+                    'user_name' => $user->first_name,
                     'activationUrl' => URL::route('activate', [$user->id, Activation::create($user)->code]),
                 ];
                 // Send the activation code through email
@@ -243,7 +243,7 @@ class UsersController extends JoshController
                     Activation::create($user);
                     //send activation mail
                     $data = [
-                        'user_name' => $user->first_name .' '. $user->last_name,
+                        'user_name' => $user->first_name ,
                         'activationUrl' => URL::route('activate', [$user->id, Activation::exists($user)->code]),
                     ];
                     // Send the activation code through email
@@ -379,7 +379,7 @@ class UsersController extends JoshController
             //            $data->activationUrl = URL::route('activate', [$user->id, Activation::create($user)->code]);
             // Send the activation code through email
             $data = [
-                'user_name' => $user->first_name .' '. $user->last_name,
+                'user_name' => $user->first_name ,
                 'activationUrl' => URL::route('activate', [$user->id, Activation::create($user)->code]),
             ];
             Mail::to($user->email)
@@ -459,7 +459,6 @@ class UsersController extends JoshController
                     $my_data = [
                         'email' => $row['email'],
                         'first_name' => $row['first_name'],
-                        'last_name' => $row['last_name'],
                         'password' => $row['password'],
                     ];
                     $validator = Validator::make(
@@ -467,7 +466,6 @@ class UsersController extends JoshController
     [
                             'email' => 'email',
                             'first_name' => 'required|min:3',
-                            'last_name' => 'required|min:3',
                             'password' => 'required|min:3',
                         ]
 );
@@ -482,7 +480,6 @@ class UsersController extends JoshController
                                 [
                                     'email' => $row['email'],
                                     'first_name' => $row['first_name'],
-                                    'last_name' => $row['last_name'],
                                     'password' => Hash::make($row['password']),
                                     'created_at' => date('Y-m-d H:i:s'),
                                     'updated_at' => date('Y-m-d H:i:s'),
@@ -497,7 +494,6 @@ class UsersController extends JoshController
                                 [
                                     'email' => $row['email'],
                                     'first_name' => $row['first_name'],
-                                    'last_name' => $row['last_name'],
                                     'password' => Hash::make($row['password']),
                                     'created_at' => date('Y-m-d H:i:s'),
                                     'updated_at' => date('Y-m-d H:i:s'),
@@ -517,7 +513,7 @@ class UsersController extends JoshController
                                 // Data to be used on the email view
 
                                 $data = [
-                                    'user_name' => $user->first_name .' '. $user->last_name,
+                                    'user_name' => $user->first_name,
                                     'activationUrl' => URL::route('activate', [$user->id, Activation::create($user)->code]),
                                 ];
                                 // Send the activation code through email
