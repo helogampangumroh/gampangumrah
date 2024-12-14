@@ -1,0 +1,115 @@
+.alert-message {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+
+.alert-message h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.alert-message p:last-child {
+    margin-bottom: 0;
+}
+
+.alert-message code {
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.alert-message-success {
+    background-color: #f4fdf0;
+    border-color: #3c763d;
+}
+
+.alert-message-success h4 {
+    color: #3c763d;
+}
+.alert-message-default {
+    background-color: #eee;
+    border-color: #b4b4b4;
+}
+
+.alert-message-default h4 {
+    color: #000;
+}
+
+/* prog code*/
+.progress.vertical {
+    position: relative;
+    width: 30px;
+    height: 167px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.progress .progress-bar.six-sec-ease-in-out {
+    -webkit-transition: width 6s ease-in-out;
+    -moz-transition: width 6s ease-in-out;
+    -ms-transition: width 6s ease-in-out;
+    -o-transition: width 6s ease-in-out;
+    transition: width 6s ease-in-out;
+}
+
+.c1 {
+    padding: 5% 0px 0px 25%;
+}
+
+.c2 {
+    padding: 5% 5% 0px 5%;
+}
+
+@media (min-width: 768px) {
+    .dl-horizontal dt {
+        float: left;
+        width: 160px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.dl-horizontal {
+    font-size: 14px;
+}
+.blockquote-reverse,
+blockquote.float-end {
+    padding-right: 15px;
+    padding-left: 0;
+    text-align: right;
+    border-right: 5px solid #eee;
+    border-left: 0;
+}
+.text_none .progressbar-back-text {
+    line-height: 0 !important;
+}
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h4,
+h5,
+h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.progress-bar-primary {
+    background-color: var(--bs-primary);
+}
+.progress-bar-danger {
+    background-color: var(--bs-danger);
+}
+.progress-bar-info {
+    background-color: var(--bs-info);
+}
+.progress-bar-success {
+    background-color: var(--bs-success);
+}
+.alert-link {
+    color: #fff !important;
+}

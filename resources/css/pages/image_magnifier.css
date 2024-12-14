@@ -1,0 +1,15 @@
+/*image overlapping in magification*/
+
+.magnify .magnify {
+    z-index: 2;
+}
+.magnify .magnify-large {
+    z-index: 4;
+}
+
+.row:not(:first-of-type) {
+    margin-top: 40px;
+}
+.card {
+    padding-bottom: 70px;
+}

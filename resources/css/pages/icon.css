@@ -1,0 +1,17 @@
+/*background color for icon*/
+.clr {
+    background: #ebebeb;
+}
+/*margin for div*/
+.iconview {
+    width: 35px;
+}
+/*button styles in FA features*/
+.btn-custom-info {
+    padding: 5px 47px;
+    border-radius: 30px;
+}
+/*width and margin for animated icons*/
+.animated_icon_view {
+    width: 45px;
+}

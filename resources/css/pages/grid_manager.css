@@ -1,0 +1,22 @@
+.pd-30 {
+    padding: 30px;
+}
+
+.col1,
+.col2,
+.col3 {
+    padding: 1em 0;
+    border-radius: 1px;
+}
+.col1 {
+    background-color: #d9edf7;
+    border: 1px solid #a0def2;
+}
+.col2 {
+    background-color: #dff0d8;
+    border: 1px solid #a3e69e;
+}
+.col3 {
+    background-color: #f5dff7;
+    border: 1px solid #f0c9f5;
+}

@@ -1,0 +1,124 @@
+// Import Google fonts
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+/*=============Over ride =====*/
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      @if $color == "light"{
+        @include button-variant(
+          $value,
+          $value,
+          $color: shade-color($value, 35%),
+          $hover-color:$color,
+          $hover-background: tint-color($value, 10%),
+        );
+      } @else if $color == "dark" {
+        @include button-variant(
+          $value,
+          $value,
+          $hover-background: tint-color($value, 10%),
+        );
+      }@else if $color == "warning" or $color =="secondary"{
+        @include button-variant(
+            $value,
+            $value,
+            $color: shade-color($value, 35%),
+            $hover-color:$color,
+            $hover-background:shade-color($value, 7%),
+            $active-color:$color,
+            );
+        }
+      @else {
+        @include button-variant($value, $value, $color:$white, $hover-color:$white,$active-color:$white);
+      }
+    }
+  }
+@each $color, $value in $theme-colors {
+    .card-outline-#{$color} {
+        border-left: 3px solid $value;
+        color: $value;
+        background-color: $white;
+    }
+}
+@each $color, $value in $theme-colors {
+    .btn-outline-#{$color}:hover {
+        color: $white;
+    }
+}
+p {
+    font-size: 14px;
+}
+@each $color, $value in $theme-colors {
+    .alert-#{$color} {
+        color: $white;
+        font-size: 14px;
+    }
+}
+
+.btn-primary:hover{
+    background-color:#3278b3;
+}
+.btn-success:hover{
+    background-color: #009670;
+}
+.btn-danger:hover{
+    background-color: #eb4d4a;
+}
+.btn-info:hover{
+    background-color:#47b9d8 ;
+}
+.btn-warning:hover{
+    background-color: #df8607;
+    color: $white !important;
+}
+.btn-secondary:hover{
+    background-color:#ccc;
+}
+//
+.btn-primary.active,
+.btn-primary:active{
+    background-color: #2f71a9 !important;
+}
+.btn-success.active,
+.btn-success:active{
+    background-color: #008966 !important;
+}
+.btn-danger.active,
+.btn-danger:active{
+    background-color: #ea423e !important;
+}
+.btn-info.active,
+.btn-info:active{
+    background-color:#3db5d6 !important;
+}
+.btn-warning.active,
+.btn-warning:active{
+    background-color:#d37e06 !important;
+}
+.btn-secondary.active,
+.btn-secondary:active{
+    background-color:#8c9ea6 !important;
+}
+.bg-purple{
+    background-color: $purple;
+    color: $white;
+}
+
+.bg-pink{
+    background-color: $pink;
+    color: $white;
+}
+
+//TODO: these classes removed in bs5 so added back for timebeing
+// if we can find proper replacement, we should remove these
+.text-justify {
+    text-align: justify;
+}
+
+

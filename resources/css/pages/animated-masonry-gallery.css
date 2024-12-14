@@ -1,0 +1,30 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #eeeeee;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.grid {
+    max-width: 1000px;
+}
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+    /*float: left;*/
+    width: 33%;
+    margin-bottom: 30px;
+}
+.grid-sizer {
+    width: 33%;
+}
+.grid a {
+    display: block;
+}

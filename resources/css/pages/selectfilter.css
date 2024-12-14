@@ -1,0 +1,24 @@
+body {
+    overflow: -webkit-paged-x;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+/*github repository css*/
+.select2-result-repository__avatar {
+    float: left;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.select2-result-repository__avatar img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.select2-result-repository__meta {
+    margin-left: 70px;
+}
