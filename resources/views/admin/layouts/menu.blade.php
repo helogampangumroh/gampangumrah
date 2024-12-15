@@ -19,18 +19,32 @@
                Pembayaran
     </a>
 </li>
+<li class="{{ Request::is('admin/keberangkatans*') ? 'active' : '' }}">
+    <a href="{!! route('admin.keberangkatans.index') !!}">
+    <i class="livicon" data-name="paper-plane" data-size="18"
+               data-loop="true"></i>
+               Keberangkatan
+    </a>
+</li>
 <li class="{{ Request::is('admin/kementerians*') ? 'active' : '' }}">
     <a href="{!! route('admin.kementerians.index') !!}">
     <i class="livicon" data-c="#333" data-hc="#333" data-name="users" data-size="18"
                data-loop="true"></i>
-               Kementerian
+               Master Kementerian
     </a>
 </li>
 <li class="{{ Request::is('admin/banks*') ? 'active' : '' }}">
     <a href="{!! route('admin.banks.index') !!}">
     <i class="livicon" data-c="#333" data-hc="#333" data-name="bank" data-size="18"
                data-loop="true"></i>
-               Bank
+               Master Bank
+    </a>
+</li>
+<li class="{{ Request::is('admin/hotels*') ? 'active' : '' }}">
+    <a href="{!! route('admin.hotels.index') !!}">
+    <i class="livicon" data-name="list" data-size="18"
+               data-loop="true"></i>
+               Master Hotel
     </a>
 </li>
 <li {!! Request::is('admin/kotas') || Request::is('admin/provinsis') || Request::is('admin/kelurahans') || Request::is('admin/kecamatans') ? 'class="mm-active"' : '' !!}>

@@ -9,6 +9,7 @@ use App\Repositories\JamaahRepository;
 use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\DB;
 use App\Models\Jamaah;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -35,8 +36,7 @@ class JamaahController extends InfyOmBaseController
 
         $this->jamaahRepository->pushCriteria(new RequestCriteria($request));
         $jamaahs = $this->jamaahRepository->all();
-        return view('admin.jamaahs.index')
-            ->with('jamaahs', $jamaahs);
+        return view('admin.jamaahs.index')->with('jamaahs', $jamaahs);
     }
 
     /**
@@ -46,7 +46,13 @@ class JamaahController extends InfyOmBaseController
      */
     public function create()
     {
-        return view('admin.jamaahs.create');
+        $getuser = DB::table('users')->get();
+        $getkementerian = DB::table('kementerians')->get();
+        $getlayanan = DB::table('layanans')->get();
+        $getpayment = DB::table('payments')->get();
+
+        // return view('admin.jamaahs.create');
+        return view('admin.jamaahs.create', compact('getuser', 'getkementerian', 'getlayanan', 'getpayment'));
     }
 
     /**
@@ -119,7 +125,7 @@ class JamaahController extends InfyOmBaseController
     {
         $jamaah = $this->jamaahRepository->findWithoutFail($id);
 
-        
+
 
         if (empty($jamaah)) {
             Flash::error('Jamaah not found');

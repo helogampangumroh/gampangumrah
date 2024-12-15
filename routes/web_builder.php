@@ -136,3 +136,33 @@ Route::get('jamaahs/{jamaahs}', ['as'=> 'jamaahs.show', 'uses' => 'JamaahControl
 Route::get('jamaahs/{jamaahs}/edit', ['as'=> 'jamaahs.edit', 'uses' => 'JamaahController@edit']);
 
 });
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('keberangkatans', ['as'=> 'keberangkatans.index', 'uses' => 'KeberangkatanController@index']);
+Route::post('keberangkatans', ['as'=> 'keberangkatans.store', 'uses' => 'KeberangkatanController@store']);
+Route::get('keberangkatans/create', ['as'=> 'keberangkatans.create', 'uses' => 'KeberangkatanController@create']);
+Route::put('keberangkatans/{keberangkatans}', ['as'=> 'keberangkatans.update', 'uses' => 'KeberangkatanController@update']);
+Route::patch('keberangkatans/{keberangkatans}', ['as'=> 'keberangkatans.update', 'uses' => 'KeberangkatanController@update']);
+Route::get('keberangkatans/{id}/delete', ['as' => 'keberangkatans.delete', 'uses' => 'KeberangkatanController@getDelete']);
+Route::get('keberangkatans/{id}/confirm-delete', ['as' => 'keberangkatans.confirm-delete', 'uses' => 'KeberangkatanController@getModalDelete']);
+Route::get('keberangkatans/{keberangkatans}', ['as'=> 'keberangkatans.show', 'uses' => 'KeberangkatanController@show']);
+Route::get('keberangkatans/{keberangkatans}/edit', ['as'=> 'keberangkatans.edit', 'uses' => 'KeberangkatanController@edit']);
+
+});
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('hotels', ['as'=> 'hotels.index', 'uses' => 'HotelController@index']);
+Route::post('hotels', ['as'=> 'hotels.store', 'uses' => 'HotelController@store']);
+Route::get('hotels/create', ['as'=> 'hotels.create', 'uses' => 'HotelController@create']);
+Route::put('hotels/{hotels}', ['as'=> 'hotels.update', 'uses' => 'HotelController@update']);
+Route::patch('hotels/{hotels}', ['as'=> 'hotels.update', 'uses' => 'HotelController@update']);
+Route::get('hotels/{id}/delete', ['as' => 'hotels.delete', 'uses' => 'HotelController@getDelete']);
+Route::get('hotels/{id}/confirm-delete', ['as' => 'hotels.confirm-delete', 'uses' => 'HotelController@getModalDelete']);
+Route::get('hotels/{hotels}', ['as'=> 'hotels.show', 'uses' => 'HotelController@show']);
+Route::get('hotels/{hotels}/edit', ['as'=> 'hotels.edit', 'uses' => 'HotelController@edit']);
+
+});

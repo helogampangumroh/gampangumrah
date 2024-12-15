@@ -100,20 +100,11 @@
                                 </a>
                             </li>
                             <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="float-start">
-                                    <a href="{{ URL::route('lockscreen', Sentinel::getUser()->id) }}">
-                                        <i class="livicon" data-name="lock" data-size="16" data-c="#555555"
-                                            data-hc="#555555" data-loop="true"></i>
-                                        Lock
-                                    </a>
-                                </div>
-                                <div class="float-end">
-                                    <a href="{{ URL::to('admin/logout') }}">
-                                        <i class="livicon" data-name="sign-out" data-s="18"></i>
-                                        Logout
-                                    </a>
-                                </div>
+                            <li>
+                                <a href="{{ URL::to('admin/logout') }}">
+                                    <i class="livicon" data-name="sign-out" data-s="18"></i>
+                                    Logout
+                                </a>
                             </li>
                         </ul>
                     </li>

@@ -1,4 +1,4 @@
-<li class="dropdown notifications-menu">
+<!-- <li class="dropdown notifications-menu">
     <a href="#dropdownshow" class="dropdown-toggle" data-bs-toggle="dropdown">
         <i class="livicon" data-name="bell" data-loop="true" data-color="#e9573f" data-hovercolor="#e9573f"
             data-size="28"></i>
@@ -7,7 +7,6 @@
     <ul class=" notifications dropdown-menu drop_notify position-abs">
         <li class="dropdown-title">You have 7 notifications</li>
         <li>
-            <!-- inner menu: contains the actual data -->
             <ul class=" menu remove_hovereffect">
                 <li class="dropdown-item">
                     <i class="livicon danger" data-n="timer" data-s="20" data-c="white" data-hc="white"></i>
@@ -72,4 +71,4 @@
             <a href="#">View all</a>
         </li>
     </ul>
-</li>
+</li> -->
