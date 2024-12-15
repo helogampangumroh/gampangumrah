@@ -104,7 +104,7 @@
 					<div class="dz-saprate">
 						<span>Atau</span>
 					</div>
-					<div class="sub-title"><a href="{{ route('login') }}" class="btn-link">Masuk</a></div>
+					<div class="sub-title"><a href="{{ route('login') }}" class="btn-link">Masuk <i class="feather icon-log-in"></i></a></div>
 				</div>
 			</div>
 		</div>

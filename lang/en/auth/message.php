@@ -15,17 +15,17 @@ return [
 
     'signin' => [
         'error'   => 'There was a problem while trying to log you in, please try again.',
-        'success' => 'You have successfully logged in.',
+        'success' => 'Anda berhasil masuk ke Akun Anda',
     ],
 
     'login' => [
         'error'   => 'There was a problem while trying to log you in, please try again.',
-        'success' => 'You have successfully logged in.',
+        'success' => 'Anda berhasil masuk ke Akun Anda',
     ],
 
     'signup' => [
         'error'   => 'There was a problem while trying to create your account, please try again.',
-        'success' => 'Account sucessfully created, Before proceeding you need to verify your account.',
+        'success' => 'Akun Berhasil Difatrakan! Silahkan Cek Email Anda Untuk Verifikasi Akun Anda.',
     ],
 
         'forgot-password' => [

@@ -33,7 +33,6 @@ class FrontendRequest extends FormRequest
             case 'POST':
                 return [
                     'first_name' => 'required|min:3',
-                    'last_name' => 'required|min:3',
                     'email' => 'required|email|unique:users,email',
                     'password' => 'required|between:3,32',
                     'password_confirm' => 'required|same:password',
@@ -44,7 +43,6 @@ class FrontendRequest extends FormRequest
             case 'PATCH':
                 return [
                     'first_name' => 'required|min:3',
-                    'last_name' => 'required|min:3',
                     'email' => 'required|unique:users,email,' . $user_id,
                     'password_confirm' => 'same:password',
                     'pic' => 'mimes:jpg,jpeg,bmp,png|max:10000',

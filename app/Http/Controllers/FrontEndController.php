@@ -16,6 +16,7 @@ use App\Models\Country;
 use App\Models\User;
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
+use Illuminate\Support\Facades\DB;
 use File;
 use Hash;
 use Illuminate\Http\Request;
@@ -44,7 +45,7 @@ class FrontEndController extends JoshController
     {
         // Is the user logged in?
         if (Sentinel::check()) {
-            return Redirect::route('my-account');
+            return Redirect::route('dashboard');
         }
         // Show the login page
         return view('login');
@@ -174,7 +175,7 @@ class FrontEndController extends JoshController
         $activate = $this->user_activation; //make it false if you don't want to activate user automatically it is declared above as global variable
         try {
             // Register the user
-            $user = Sentinel::register($request->only(['first_name', 'last_name', 'email', 'password', 'gender']), $activate);
+            $user = Sentinel::register($request->only(['first_name', 'email', 'password', 'gender']), $activate);
             //add user to 'User' role
             $role = Sentinel::findRoleById(2);
             $role->users()->attach($user);
@@ -183,7 +184,7 @@ class FrontEndController extends JoshController
                 // Data to be used on the email view
 
                 $data = [
-                    'user_name' => $user->first_name .' '. $user->last_name,
+                    'user_name' => $user->first_name,
                     'activationUrl' => URL::route('activate', [$user->id, Activation::create($user)->code]),
                 ];
                 // Send the activation code through email
@@ -270,7 +271,7 @@ class FrontEndController extends JoshController
 
             $reminder = Reminder::create($user);
             // Data to be used on the email view
-            $data->user_name = $user->first_name .' ' .$user->last_name;
+            $data->user_name = $user->first_name ;
             $data->forgotPasswordUrl = URL::route('forgot-password-confirm', [$user->id, $reminder->code]);
             // Send the activation code through email
             Mail::to($user->email)
@@ -382,5 +383,38 @@ class FrontEndController extends JoshController
         }
         // Redirect to the users page
         return redirect('login')->with('success', 'Anda Berhasil Keluar!');
+    }
+
+    /**
+     * Tambahan
+     */
+    public function dashboard()
+    {
+        $user = Sentinel::getUser();
+        $countries = Country::all()->pluck('name', 'sortname')->toArray();
+        return view('user_dashboard', compact('user', 'countries'));
+    }
+
+    /**
+     * Tambahan
+     */
+    public function pesanan()
+    {
+        $user = Sentinel::getUser();
+        $countries = Country::all()->pluck('name', 'sortname')->toArray();
+        return view('user_pesanan', compact('user', 'countries'));
+    }
+
+    /**
+     * Tambahan
+     */
+    public function notif()
+    {
+        $user = Sentinel::getUser();
+        $countries = Country::all()->pluck('name', 'sortname')->toArray();
+
+        $getnotif = DB::table('activity_log')->where('subject_id', $user->id )->get();
+
+        return view('user_notif', compact('user', 'countries', 'getnotif'));
     }
 }

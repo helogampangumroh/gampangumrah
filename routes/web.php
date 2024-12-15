@@ -296,6 +296,9 @@ Route::group(
     function () {
         Route::put('my-account', 'FrontEndController@update');
         Route::get('my-account', 'FrontEndController@myAccount')->name('my-account');
+        Route::get('dashboard', 'FrontEndController@dashboard')->name('dashboard');
+        Route::get('pesanan', 'FrontEndController@pesanan')->name('pesanan');
+        Route::get('notif', 'FrontEndController@notif')->name('notif');
     }
 );
 // Email System

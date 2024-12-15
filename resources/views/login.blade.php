@@ -118,7 +118,7 @@
 					<div class="dz-saprate">
 						<span>Atau</span>
 					</div>
-					<div class="sub-title"><a href="{{ route('register') }}" class="btn-link">Daftar Sekarang</a></div>
+					<div class="sub-title"><a href="{{ route('register') }}" class="btn-link">Daftar Sekarang <i class="feather icon-user-plus"></i></a></div>
 				</div>
 			</div>
 		</div>

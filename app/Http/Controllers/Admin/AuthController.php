@@ -89,7 +89,6 @@ class AuthController extends JoshController
             $user = Sentinel::register(
                 [
                     'first_name' => $request->get('first_name'),
-                    'last_name' => $request->get('last_name'),
                     'email' => $request->get('email'),
                     'password' => $request->get('password'),
                 ],
@@ -104,7 +103,7 @@ class AuthController extends JoshController
                 // Data to be used on the email view
 
                 $data = [
-                    'user_name' => $user->first_name .' '. $user->last_name,
+                    'user_name' => $user->first_name,
                     'activationUrl' => URL::route('activate', [$user->id, Activation::create($user)->code]),
                 ];
                 // Send the activation code through email
@@ -187,7 +186,7 @@ class AuthController extends JoshController
             }
             $reminder = Reminder::create($user);
             // Data to be used on the email view
-            $data->user_name = $user->first_name .' ' .$user->last_name;
+            $data->user_name = $user->first_name;
             $data->forgotPasswordUrl = URL::route('forgot-password-confirm', [$user->id, $reminder->code]);
 
             // Send the activation code through email
@@ -292,7 +291,6 @@ class AuthController extends JoshController
             $user = Sentinel::registerAndActivate(
                 [
                     'first_name' => $request->get('first_name'),
-                    'last_name' => $request->get('last_name'),
                     'email' => $request->get('email'),
                     'password' => $request->get('password'),
 
